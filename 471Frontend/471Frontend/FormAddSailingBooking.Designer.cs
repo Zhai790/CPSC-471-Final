@@ -125,13 +125,14 @@
             // 
             // sailstarttime
             // 
-            this.sailstarttime.CustomFormat = "HH:mm:ss tt";
+            this.sailstarttime.CustomFormat = "HH:mm:ss ";
             this.sailstarttime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.sailstarttime.Location = new System.Drawing.Point(63, 184);
             this.sailstarttime.Name = "sailstarttime";
             this.sailstarttime.ShowUpDown = true;
             this.sailstarttime.Size = new System.Drawing.Size(326, 23);
             this.sailstarttime.TabIndex = 13;
+            this.sailstarttime.Value = new System.DateTime(2022, 12, 7, 12, 17, 10, 0);
             this.sailstarttime.ValueChanged += new System.EventHandler(this.sailstarttime_ValueChanged);
             // 
             // sailtimepicker
@@ -154,6 +155,7 @@
             this.submitbtnsail.TabIndex = 12;
             this.submitbtnsail.Text = "Submit";
             this.submitbtnsail.UseVisualStyleBackColor = false;
+            this.submitbtnsail.Click += new System.EventHandler(this.submitbtnsail_Click);
             // 
             // sailboatIDtitle
             // 

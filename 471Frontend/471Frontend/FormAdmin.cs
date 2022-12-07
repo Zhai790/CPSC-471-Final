@@ -4,11 +4,13 @@ namespace _471Frontend
 {
     public partial class FormAdmin : Form
     {
-        FormAddClient form;
+        FormAddClient AddClientForm;
+        FormAddSailingBooking AddSailForm;
         public FormAdmin()
         {
             InitializeComponent();
-            form = new FormAddClient(this);
+            AddClientForm = new FormAddClient(this);
+            AddSailForm = new FormAddSailingBooking(this);
         }
 
         public void Display()
@@ -44,8 +46,12 @@ namespace _471Frontend
 
         private void addsailbtn_Click(object sender, EventArgs e)
         {
-            FormAddSailingBooking f = new FormAddSailingBooking();
-            f.ShowDialog();
+            //FormAddSailingBooking f = new FormAddSailingBooking(this);
+            //f.ShowDialog();
+
+            AddSailForm.Clear();
+            AddSailForm.SaveInfo();
+            AddSailForm.ShowDialog();
         }
 
         private void addammenitiesbtn_Click(object sender, EventArgs e)
@@ -61,9 +67,9 @@ namespace _471Frontend
 
         private void addClient_Click(object sender, EventArgs e)
         {
-            form.Clear();
-            form.SaveInfo();
-            form.ShowDialog();
+            AddClientForm.Clear();
+            AddClientForm.SaveInfo();
+            AddClientForm.ShowDialog();
         }
 
         private void searchClients_TextChanged(object sender, EventArgs e)
@@ -76,20 +82,20 @@ namespace _471Frontend
             if (e.ColumnIndex == 11)
             {
                 //edit client button
-                form.Clear();
-                form.GetID((int)dataGridViewClient.Rows[e.RowIndex].Cells[0].Value);
-                form.City = dataGridViewClient.Rows[e.RowIndex].Cells[1].Value.ToString();
-                form.FName = dataGridViewClient.Rows[e.RowIndex].Cells[2].Value.ToString();
-                form.LName = dataGridViewClient.Rows[e.RowIndex].Cells[3].Value.ToString();
-                form.Phone_Number = dataGridViewClient.Rows[e.RowIndex].Cells[4].Value.ToString();
-                form.Email = dataGridViewClient.Rows[e.RowIndex].Cells[5].Value.ToString();
-                form.Zip = dataGridViewClient.Rows[e.RowIndex].Cells[6].Value.ToString();
-                form.S_A_Number = dataGridViewClient.Rows[e.RowIndex].Cells[7].Value.ToString();
-                form.Street = dataGridViewClient.Rows[e.RowIndex].Cells[8].Value.ToString();
-                form.Apt_No = dataGridViewClient.Rows[e.RowIndex].Cells[9].Value.ToString();
-                form.Province = dataGridViewClient.Rows[e.RowIndex].Cells[10].Value.ToString();
-                form.UpdateInfo();
-                form.ShowDialog();
+                AddClientForm.Clear();
+                AddClientForm.GetID((int)dataGridViewClient.Rows[e.RowIndex].Cells[0].Value);
+                AddClientForm.City = dataGridViewClient.Rows[e.RowIndex].Cells[1].Value.ToString();
+                AddClientForm.FName = dataGridViewClient.Rows[e.RowIndex].Cells[2].Value.ToString();
+                AddClientForm.LName = dataGridViewClient.Rows[e.RowIndex].Cells[3].Value.ToString();
+                AddClientForm.Phone_Number = dataGridViewClient.Rows[e.RowIndex].Cells[4].Value.ToString();
+                AddClientForm.Email = dataGridViewClient.Rows[e.RowIndex].Cells[5].Value.ToString();
+                AddClientForm.Zip = dataGridViewClient.Rows[e.RowIndex].Cells[6].Value.ToString();
+                AddClientForm.S_A_Number = dataGridViewClient.Rows[e.RowIndex].Cells[7].Value.ToString();
+                AddClientForm.Street = dataGridViewClient.Rows[e.RowIndex].Cells[8].Value.ToString();
+                AddClientForm.Apt_No = dataGridViewClient.Rows[e.RowIndex].Cells[9].Value.ToString();
+                AddClientForm.Province = dataGridViewClient.Rows[e.RowIndex].Cells[10].Value.ToString();
+                AddClientForm.UpdateInfo();
+                AddClientForm.ShowDialog();
                 return;
             }
             if (e.ColumnIndex == 12)

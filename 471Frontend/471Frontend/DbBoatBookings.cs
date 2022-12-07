@@ -29,6 +29,12 @@ namespace _471Frontend
 
         //utilizing SqlCommand automatically handles sql injection prevention
 
+        /*
+         * 
+         * CLIENT INFORMATION
+         * 
+         */
+
         public static void AddClient(Client cl)
         {
             string sql = "INSERT INTO clients VALUES (NULL, @Phone, @Email, @City, @SANumber, @Street, @Apt_No, @Province, @Zip, @Fname, @Lname)";
@@ -117,6 +123,12 @@ namespace _471Frontend
             con.Close();
         }
 
+        /*
+         * 
+         * CLIENT BOOKINGS
+         * 
+         */
+
         public static void GetBooking(string query, ComboBox cb, string colName)
         {
             string sql = query;
@@ -127,6 +139,30 @@ namespace _471Frontend
             adp.Fill(tbl);
             cb.DisplayMember = colName;
             cb.DataSource = tbl;
+            con.Close();
+        }
+
+        public static void AddBooking(ClientBooking cb, int bookingIDCounter)
+        {
+            string sql = "INSERT INTO booking VALUES (@Booking_ID, @Time, @Date, @Location); INSERT INTO reserves VALUES (@Booking_ID, @Boat_ID, @Client_ID)"; 
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@Booking_ID", MySqlDbType.Int32).Value = bookingIDCounter;
+            cmd.Parameters.Add("@Time", MySqlDbType.Time).Value = cb.Time;
+            cmd.Parameters.Add("@Date", MySqlDbType.Date).Value = cb.Date.Date;
+            cmd.Parameters.Add("@Location", MySqlDbType.VarChar).Value = cb.Location;
+            cmd.Parameters.Add("@Boat_ID", MySqlDbType.Int32).Value = cb.BoatID;
+            cmd.Parameters.Add("@Client_ID", MySqlDbType.Int32).Value = cb.ClientID;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Added Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("New Booking Not Inserted!" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             con.Close();
         }
     }

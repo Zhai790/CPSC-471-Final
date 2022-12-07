@@ -169,7 +169,7 @@
             // 
             // bookingBindingSource2
             // 
-            this.bookingBindingSource2.DataSource = typeof(Booking);
+            this.bookingBindingSource2.DataSource = typeof(ClientBooking);
             // 
             // pictureBox1
             // 
@@ -207,7 +207,7 @@
             // 
             // bookingBindingSource
             // 
-            this.bookingBindingSource.DataSource = typeof(Booking);
+            this.bookingBindingSource.DataSource = typeof(ClientBooking);
             // 
             // panel3
             // 
@@ -469,7 +469,7 @@
             // 
             // bookingBindingSource1
             // 
-            this.bookingBindingSource1.DataSource = typeof(Booking);
+            this.bookingBindingSource1.DataSource = typeof(ClientBooking);
             // 
             // ClientID
             // 
