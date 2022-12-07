@@ -31,17 +31,17 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.addsailtitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.sailclientIDtxt = new System.Windows.Forms.ComboBox();
+            this.saillocationtxt = new System.Windows.Forms.ComboBox();
+            this.sailboatIDtxt = new System.Windows.Forms.ComboBox();
+            this.sailstarttime = new System.Windows.Forms.DateTimePicker();
             this.sailtimepicker = new System.Windows.Forms.DateTimePicker();
             this.submitbtnsail = new System.Windows.Forms.Button();
-            this.saillocationtxt = new System.Windows.Forms.TextBox();
-            this.sailboatIDtxt = new System.Windows.Forms.TextBox();
             this.sailboatIDtitle = new System.Windows.Forms.Label();
-            this.sailclientIDtxt = new System.Windows.Forms.TextBox();
             this.saillocationtitle = new System.Windows.Forms.Label();
             this.sailtimetitle = new System.Windows.Forms.Label();
             this.saildatetxt = new System.Windows.Forms.Label();
             this.sailclientIDtitle = new System.Windows.Forms.Label();
-            this.sailstarttime = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,13 +69,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.sailclientIDtxt);
+            this.panel1.Controls.Add(this.saillocationtxt);
+            this.panel1.Controls.Add(this.sailboatIDtxt);
             this.panel1.Controls.Add(this.sailstarttime);
             this.panel1.Controls.Add(this.sailtimepicker);
             this.panel1.Controls.Add(this.submitbtnsail);
-            this.panel1.Controls.Add(this.saillocationtxt);
-            this.panel1.Controls.Add(this.sailboatIDtxt);
             this.panel1.Controls.Add(this.sailboatIDtitle);
-            this.panel1.Controls.Add(this.sailclientIDtxt);
             this.panel1.Controls.Add(this.saillocationtitle);
             this.panel1.Controls.Add(this.sailtimetitle);
             this.panel1.Controls.Add(this.saildatetxt);
@@ -85,8 +85,56 @@
             this.panel1.Size = new System.Drawing.Size(460, 437);
             this.panel1.TabIndex = 2;
             // 
+            // sailclientIDtxt
+            // 
+            this.sailclientIDtxt.FormattingEnabled = true;
+            this.sailclientIDtxt.Location = new System.Drawing.Point(63, 51);
+            this.sailclientIDtxt.Name = "sailclientIDtxt";
+            this.sailclientIDtxt.Size = new System.Drawing.Size(121, 23);
+            this.sailclientIDtxt.TabIndex = 16;
+            this.sailclientIDtxt.SelectedIndexChanged += new System.EventHandler(this.sailclientIDtxt_SelectedIndexChanged);
+            // 
+            // saillocationtxt
+            // 
+            this.saillocationtxt.FormattingEnabled = true;
+            this.saillocationtxt.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.saillocationtxt.Location = new System.Drawing.Point(63, 247);
+            this.saillocationtxt.Name = "saillocationtxt";
+            this.saillocationtxt.Size = new System.Drawing.Size(326, 23);
+            this.saillocationtxt.TabIndex = 15;
+            this.saillocationtxt.SelectedIndexChanged += new System.EventHandler(this.saillocationtxt_SelectedIndexChanged);
+            // 
+            // sailboatIDtxt
+            // 
+            this.sailboatIDtxt.FormattingEnabled = true;
+            this.sailboatIDtxt.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.sailboatIDtxt.Location = new System.Drawing.Point(63, 314);
+            this.sailboatIDtxt.Name = "sailboatIDtxt";
+            this.sailboatIDtxt.Size = new System.Drawing.Size(133, 23);
+            this.sailboatIDtxt.TabIndex = 14;
+            this.sailboatIDtxt.SelectedIndexChanged += new System.EventHandler(this.sailboatIDtxt_SelectedIndexChanged);
+            // 
+            // sailstarttime
+            // 
+            this.sailstarttime.CustomFormat = "HH:mm:ss tt";
+            this.sailstarttime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.sailstarttime.Location = new System.Drawing.Point(63, 184);
+            this.sailstarttime.Name = "sailstarttime";
+            this.sailstarttime.ShowUpDown = true;
+            this.sailstarttime.Size = new System.Drawing.Size(326, 23);
+            this.sailstarttime.TabIndex = 13;
+            this.sailstarttime.ValueChanged += new System.EventHandler(this.sailstarttime_ValueChanged);
+            // 
             // sailtimepicker
             // 
+            this.sailtimepicker.CustomFormat = "yyyy-mm-dd";
+            this.sailtimepicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.sailtimepicker.Location = new System.Drawing.Point(63, 117);
             this.sailtimepicker.Name = "sailtimepicker";
             this.sailtimepicker.Size = new System.Drawing.Size(326, 23);
@@ -104,20 +152,6 @@
             this.submitbtnsail.Text = "Submit";
             this.submitbtnsail.UseVisualStyleBackColor = false;
             // 
-            // saillocationtxt
-            // 
-            this.saillocationtxt.Location = new System.Drawing.Point(63, 247);
-            this.saillocationtxt.Name = "saillocationtxt";
-            this.saillocationtxt.Size = new System.Drawing.Size(326, 23);
-            this.saillocationtxt.TabIndex = 0;
-            // 
-            // sailboatIDtxt
-            // 
-            this.sailboatIDtxt.Location = new System.Drawing.Point(63, 314);
-            this.sailboatIDtxt.Name = "sailboatIDtxt";
-            this.sailboatIDtxt.Size = new System.Drawing.Size(326, 23);
-            this.sailboatIDtxt.TabIndex = 0;
-            // 
             // sailboatIDtitle
             // 
             this.sailboatIDtitle.AutoSize = true;
@@ -127,13 +161,6 @@
             this.sailboatIDtitle.TabIndex = 8;
             this.sailboatIDtitle.Text = "Boat ID:";
             this.sailboatIDtitle.Click += new System.EventHandler(this.sailboatIDtitle_Click);
-            // 
-            // sailclientIDtxt
-            // 
-            this.sailclientIDtxt.Location = new System.Drawing.Point(63, 51);
-            this.sailclientIDtxt.Name = "sailclientIDtxt";
-            this.sailclientIDtxt.Size = new System.Drawing.Size(326, 23);
-            this.sailclientIDtxt.TabIndex = 3;
             // 
             // saillocationtitle
             // 
@@ -171,13 +198,6 @@
             this.sailclientIDtitle.TabIndex = 1;
             this.sailclientIDtitle.Text = "Client ID:";
             // 
-            // sailstarttime
-            // 
-            this.sailstarttime.Location = new System.Drawing.Point(63, 184);
-            this.sailstarttime.Name = "sailstarttime";
-            this.sailstarttime.Size = new System.Drawing.Size(326, 23);
-            this.sailstarttime.TabIndex = 13;
-            // 
             // FormAddSailingBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -188,6 +208,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormAddSailingBooking";
             this.Text = "Add Sailing Booking";
+            this.Load += new System.EventHandler(this.FormAddSailingBooking_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -203,14 +224,14 @@
         private Panel panel1;
         private DateTimePicker sailtimepicker;
         private Button submitbtnsail;
-        private TextBox saillocationtxt;
-        private TextBox sailboatIDtxt;
         private Label sailboatIDtitle;
-        private TextBox sailclientIDtxt;
         private Label saillocationtitle;
         private Label sailtimetitle;
         private Label saildatetxt;
         private Label sailclientIDtitle;
         private DateTimePicker sailstarttime;
+        private ComboBox sailclientIDtxt;
+        private ComboBox saillocationtxt;
+        private ComboBox sailboatIDtxt;
     }
 }
