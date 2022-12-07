@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Michael Zhai\\OneDrive\\Documents\\471Frontend\\471Frontend\\471Frontend.csproj": {}
+    "C:\\Users\\Michael Zhai\\OneDrive\\Documents\\GitHub\\CPSC-471-Final\\471Frontend\\471Frontend\\471Frontend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Michael Zhai\\OneDrive\\Documents\\471Frontend\\471Frontend\\471Frontend.csproj": {
+    "C:\\Users\\Michael Zhai\\OneDrive\\Documents\\GitHub\\CPSC-471-Final\\471Frontend\\471Frontend\\471Frontend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Michael Zhai\\OneDrive\\Documents\\471Frontend\\471Frontend\\471Frontend.csproj",
+        "projectUniqueName": "C:\\Users\\Michael Zhai\\OneDrive\\Documents\\GitHub\\CPSC-471-Final\\471Frontend\\471Frontend\\471Frontend.csproj",
         "projectName": "471Frontend",
-        "projectPath": "C:\\Users\\Michael Zhai\\OneDrive\\Documents\\471Frontend\\471Frontend\\471Frontend.csproj",
+        "projectPath": "C:\\Users\\Michael Zhai\\OneDrive\\Documents\\GitHub\\CPSC-471-Final\\471Frontend\\471Frontend\\471Frontend.csproj",
         "packagesPath": "C:\\Users\\Michael Zhai\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Michael Zhai\\OneDrive\\Documents\\471Frontend\\471Frontend\\obj\\",
+        "outputPath": "C:\\Users\\Michael Zhai\\OneDrive\\Documents\\GitHub\\CPSC-471-Final\\471Frontend\\471Frontend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Michael Zhai\\AppData\\Roaming\\NuGet\\NuGet.Config",
