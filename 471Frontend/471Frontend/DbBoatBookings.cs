@@ -142,6 +142,18 @@ namespace _471Frontend
             con.Close();
         }
 
+        public static void GetBooking(string query, DataGridView dgv)
+        {
+            string sql = query;
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataTable tbl = new DataTable();
+            adp.Fill(tbl);
+            dgv.DataSource = tbl;
+            con.Close();
+        }
+
         public static void AddBooking(ClientBooking cb, int bookingIDCounter)
         {
             string sql = "INSERT INTO booking VALUES (@Booking_ID, @Time, @Date, @Location); INSERT INTO reserves VALUES (@Booking_ID, @Boat_ID, @Client_ID)"; 
@@ -162,6 +174,49 @@ namespace _471Frontend
             catch (MySqlException ex)
             {
                 MessageBox.Show("New Booking Not Inserted!" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+        public static void UpdateBooking(ClientBooking cb, int id)
+        {
+            string sql = "UPDATE booking SET (Time = @Time, Date = @Date, Located_At = @Location) WHERE Booking_ID = @BookingID; UPDATE reserves SET (Boat_ID = @BoatID, CLient_ID = @ClientID) WHERE Booking_ID = @BookingID";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@BookingID", MySqlDbType.Int32).Value = id;
+            cmd.Parameters.Add("@Time", MySqlDbType.Time).Value = cb.Time;
+            cmd.Parameters.Add("@Date", MySqlDbType.Date).Value = cb.Date;
+            cmd.Parameters.Add("@Location", MySqlDbType.VarChar).Value = cb.Location;
+            cmd.Parameters.Add("@ClientID", MySqlDbType.Int32).Value = cb.ClientID;
+            cmd.Parameters.Add("@BoatID", MySqlDbType.Int32).Value = cb.BoatID;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Updated Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Client Booking Information Update Failed!" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+        public static void DeleteBooking(int id)
+        {
+            string sql = "DELETE FROM booking WHERE Booking_ID = @BookingID";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@BookingID", MySqlDbType.Int64).Value = id;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Client Booking Deletion Failed!" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }

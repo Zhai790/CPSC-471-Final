@@ -122,7 +122,7 @@ namespace _471Frontend
                 Clear();
             }
 
-            _parent.Display();
+            _parent.DisplayClient();
         }
     }
 }

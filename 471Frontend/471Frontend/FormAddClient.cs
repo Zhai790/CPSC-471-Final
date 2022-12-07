@@ -144,7 +144,7 @@ namespace _471Frontend
                 Clear();
             }
 
-            _parent.Display();
+            _parent.DisplayClient();
         }
 
         private void emailtitle_Click(object sender, EventArgs e)
