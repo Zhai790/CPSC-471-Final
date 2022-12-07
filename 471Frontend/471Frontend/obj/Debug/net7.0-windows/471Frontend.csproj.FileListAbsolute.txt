@@ -67,3 +67,11 @@ C:\Users\Michael Zhai\OneDrive\Documents\GitHub\CPSC-471-Final\471Frontend\471Fr
 C:\Users\Michael Zhai\OneDrive\Documents\GitHub\CPSC-471-Final\471Frontend\471Frontend\obj\Debug\net7.0-windows\471Frontend.pdb
 C:\Users\Michael Zhai\OneDrive\Documents\GitHub\CPSC-471-Final\471Frontend\471Frontend\obj\Debug\net7.0-windows\471Frontend.genruntimeconfig.cache
 C:\Users\Michael Zhai\OneDrive\Documents\GitHub\CPSC-471-Final\471Frontend\471Frontend\obj\Debug\net7.0-windows\ref\471Frontend.dll
+C:\Users\Michael Zhai\OneDrive\Documents\GitHub\CPSC-471-Final\471Frontend\471Frontend\bin\Debug\net7.0-windows\Google.Protobuf.dll
+C:\Users\Michael Zhai\OneDrive\Documents\GitHub\CPSC-471-Final\471Frontend\471Frontend\bin\Debug\net7.0-windows\K4os.Compression.LZ4.dll
+C:\Users\Michael Zhai\OneDrive\Documents\GitHub\CPSC-471-Final\471Frontend\471Frontend\bin\Debug\net7.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\Michael Zhai\OneDrive\Documents\GitHub\CPSC-471-Final\471Frontend\471Frontend\bin\Debug\net7.0-windows\K4os.Hash.xxHash.dll
+C:\Users\Michael Zhai\OneDrive\Documents\GitHub\CPSC-471-Final\471Frontend\471Frontend\bin\Debug\net7.0-windows\MySql.Data.dll
+C:\Users\Michael Zhai\OneDrive\Documents\GitHub\CPSC-471-Final\471Frontend\471Frontend\bin\Debug\net7.0-windows\ZstdNet.dll
+C:\Users\Michael Zhai\OneDrive\Documents\GitHub\CPSC-471-Final\471Frontend\471Frontend\bin\Debug\net7.0-windows\BouncyCastle.Crypto.dll
+C:\Users\Michael Zhai\OneDrive\Documents\GitHub\CPSC-471-Final\471Frontend\471Frontend\obj\Debug\net7.0-windows\471Frontend.csproj.CopyComplete

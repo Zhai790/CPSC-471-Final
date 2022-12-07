@@ -28,28 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridViewClient = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.bookingBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.searchClients = new System.Windows.Forms.TextBox();
             this.newbtnclient = new System.Windows.Forms.Button();
+            this.bookingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridViewSailBooking = new System.Windows.Forms.DataGridView();
             this.sailBookingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,16 +70,33 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.addammenitiesbtn = new System.Windows.Forms.Button();
+            this.bookingBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ClientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.S_A_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Street = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apt_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Province = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSailBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -125,19 +136,25 @@
             this.dataGridViewClient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewClient.AutoGenerateColumns = false;
             this.dataGridViewClient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewClient.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewClient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
+            this.ClientID,
+            this.City,
+            this.FName,
+            this.LName,
+            this.Phone,
+            this.Email,
             this.Column7,
+            this.S_A_Number,
+            this.Street,
+            this.Apt_No,
+            this.Province,
             this.Column8,
             this.Column9});
+            this.dataGridViewClient.DataSource = this.bookingBindingSource2;
             this.dataGridViewClient.GridColor = System.Drawing.SystemColors.ControlDark;
             this.dataGridViewClient.Location = new System.Drawing.Point(16, 64);
             this.dataGridViewClient.Name = "dataGridViewClient";
@@ -147,72 +164,12 @@
             this.dataGridViewClient.ShowEditingIcon = false;
             this.dataGridViewClient.Size = new System.Drawing.Size(1139, 170);
             this.dataGridViewClient.TabIndex = 0;
+            this.dataGridViewClient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClient_CellClick);
             this.dataGridViewClient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
-            // Column1
+            // bookingBindingSource2
             // 
-            this.Column1.HeaderText = "Client ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "FName";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "LName";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Phone";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Email";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Address";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Zip";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Column8.HeaderText = "";
-            this.Column8.Name = "Column8";
-            this.Column8.Text = "Edit";
-            this.Column8.UseColumnTextForButtonValue = true;
-            // 
-            // Column9
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Column9.HeaderText = "";
-            this.Column9.Name = "Column9";
-            this.Column9.Text = "Delete";
-            this.Column9.UseColumnTextForButtonValue = true;
+            this.bookingBindingSource2.DataSource = typeof(Booking);
             // 
             // pictureBox1
             // 
@@ -233,6 +190,7 @@
             this.searchClients.Name = "searchClients";
             this.searchClients.Size = new System.Drawing.Size(277, 23);
             this.searchClients.TabIndex = 2;
+            this.searchClients.TextChanged += new System.EventHandler(this.searchClients_TextChanged);
             // 
             // newbtnclient
             // 
@@ -245,7 +203,11 @@
             this.newbtnclient.TabIndex = 1;
             this.newbtnclient.Text = "New";
             this.newbtnclient.UseVisualStyleBackColor = false;
-            this.newbtnclient.Click += new System.EventHandler(this.button1_Click);
+            this.newbtnclient.Click += new System.EventHandler(this.addClient_Click);
+            // 
+            // bookingBindingSource
+            // 
+            this.bookingBindingSource.DataSource = typeof(Booking);
             // 
             // panel3
             // 
@@ -505,6 +467,106 @@
             this.addammenitiesbtn.UseVisualStyleBackColor = false;
             this.addammenitiesbtn.Click += new System.EventHandler(this.addammenitiesbtn_Click);
             // 
+            // bookingBindingSource1
+            // 
+            this.bookingBindingSource1.DataSource = typeof(Booking);
+            // 
+            // ClientID
+            // 
+            this.ClientID.DataPropertyName = "Client_ID";
+            this.ClientID.HeaderText = "Client ID";
+            this.ClientID.Name = "ClientID";
+            // 
+            // City
+            // 
+            this.City.DataPropertyName = "City";
+            this.City.HeaderText = "City";
+            this.City.Name = "City";
+            // 
+            // FName
+            // 
+            this.FName.DataPropertyName = "FName";
+            this.FName.HeaderText = "FName";
+            this.FName.Name = "FName";
+            // 
+            // LName
+            // 
+            this.LName.DataPropertyName = "LName";
+            this.LName.HeaderText = "LName";
+            this.LName.Name = "LName";
+            // 
+            // Phone
+            // 
+            this.Phone.DataPropertyName = "Phone_Number";
+            this.Phone.HeaderText = "Phone";
+            this.Phone.Name = "Phone";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Zip";
+            this.Column7.HeaderText = "Zip";
+            this.Column7.Name = "Column7";
+            // 
+            // S_A_Number
+            // 
+            this.S_A_Number.DataPropertyName = "S_A_Number";
+            this.S_A_Number.HeaderText = "S_A_Number";
+            this.S_A_Number.Name = "S_A_Number";
+            // 
+            // Street
+            // 
+            this.Street.DataPropertyName = "Street";
+            this.Street.HeaderText = "Street";
+            this.Street.Name = "Street";
+            // 
+            // Apt_No
+            // 
+            this.Apt_No.DataPropertyName = "Apt_No";
+            this.Apt_No.HeaderText = "Apt_No";
+            this.Apt_No.Name = "Apt_No";
+            // 
+            // Province
+            // 
+            this.Province.DataPropertyName = "Province";
+            this.Province.HeaderText = "Province";
+            this.Province.Name = "Province";
+            // 
+            // Column8
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column8.HeaderText = "";
+            this.Column8.Name = "Column8";
+            this.Column8.Text = "Edit";
+            this.Column8.UseColumnTextForButtonValue = true;
+            // 
+            // Column9
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column9.HeaderText = "";
+            this.Column9.Name = "Column9";
+            this.Column9.Text = "Delete";
+            this.Column9.UseColumnTextForButtonValue = true;
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -523,7 +585,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSailBooking)).EndInit();
@@ -532,6 +596,7 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -553,15 +618,6 @@
         private TextBox textBox3;
         private Button addammenitiesbtn;
         private DataGridView dataGridViewClient;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewButtonColumn Column8;
-        private DataGridViewButtonColumn Column9;
         private DataGridView dataGridViewSailBooking;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn sailBookingID;
@@ -580,5 +636,21 @@
         private DataGridViewTextBoxColumn ammenitiesID;
         private DataGridViewButtonColumn dataGridViewButtonColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private BindingSource bookingBindingSource;
+        private BindingSource bookingBindingSource2;
+        private BindingSource bookingBindingSource1;
+        private DataGridViewTextBoxColumn ClientID;
+        private DataGridViewTextBoxColumn City;
+        private DataGridViewTextBoxColumn FName;
+        private DataGridViewTextBoxColumn LName;
+        private DataGridViewTextBoxColumn Phone;
+        private DataGridViewTextBoxColumn Email;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn S_A_Number;
+        private DataGridViewTextBoxColumn Street;
+        private DataGridViewTextBoxColumn Apt_No;
+        private DataGridViewTextBoxColumn Province;
+        private DataGridViewButtonColumn Column8;
+        private DataGridViewButtonColumn Column9;
     }
 }
