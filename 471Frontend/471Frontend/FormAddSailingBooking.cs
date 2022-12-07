@@ -40,8 +40,12 @@ namespace _471Frontend
 
         private void FormAddSailingBooking_Load(object sender, EventArgs e)
         {
-            string query = "SELECT Client_ID FROM clients";
-            DbBoatBookings.GetBooking(query, sailclientIDtxt, "Client_ID");
+            string IDQuery = "SELECT Client_ID FROM clients";
+            DbBoatBookings.GetBooking(IDQuery, sailclientIDtxt, "Client_ID");
+            string locationQuery = "SELECT Street FROM location";
+            DbBoatBookings.GetBooking(locationQuery, saillocationtxt, "Street");
+            string boatQuery = "SELECT BName FROM boat";
+            DbBoatBookings.GetBooking(boatQuery, sailboatIDtxt, "BName");
         }
 
         private void sailclientIDtxt_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,14 +55,22 @@ namespace _471Frontend
 
         private void saillocationtxt_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string query = "SELECT Client_ID FROM clients";
-            DbBoatBookings.GetBooking(query, sailclientIDtxt, "Client_ID");
+            
         }
 
         private void sailboatIDtxt_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string query = "SELECT Client_ID FROM clients";
-            DbBoatBookings.GetBooking(query, sailclientIDtxt, "Client_ID");
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

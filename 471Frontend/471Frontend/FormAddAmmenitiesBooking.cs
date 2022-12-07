@@ -19,5 +19,10 @@ namespace _471Frontend
             this.ammentiestime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ammentiestime.ShowUpDown = true;
         }
+
+        private void FormAddAmmenitiesBooking_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

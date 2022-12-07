@@ -31,6 +31,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.addammenitiestitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ammentiestime = new System.Windows.Forms.DateTimePicker();
             this.ammenitiestimepicker = new System.Windows.Forms.DateTimePicker();
             this.submitbtnammenities = new System.Windows.Forms.Button();
             this.ammenitieslocationtxt = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.sailtimetitle = new System.Windows.Forms.Label();
             this.ammenitiesdatetxt = new System.Windows.Forms.Label();
             this.ammenitiesclientIDtitle = new System.Windows.Forms.Label();
-            this.ammentiestime = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(460, 437);
             this.panel1.TabIndex = 3;
+            // 
+            // ammentiestime
+            // 
+            this.ammentiestime.Location = new System.Drawing.Point(63, 184);
+            this.ammentiestime.Name = "ammentiestime";
+            this.ammentiestime.Size = new System.Drawing.Size(326, 23);
+            this.ammentiestime.TabIndex = 13;
             // 
             // ammenitiestimepicker
             // 
@@ -169,13 +176,6 @@
             this.ammenitiesclientIDtitle.TabIndex = 1;
             this.ammenitiesclientIDtitle.Text = "Client ID:";
             // 
-            // ammentiestime
-            // 
-            this.ammentiestime.Location = new System.Drawing.Point(63, 184);
-            this.ammentiestime.Name = "ammentiestime";
-            this.ammentiestime.Size = new System.Drawing.Size(326, 23);
-            this.ammentiestime.TabIndex = 13;
-            // 
             // FormAddAmmenitiesBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -185,6 +185,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "FormAddAmmenitiesBooking";
             this.Text = "Add Ammenities Booking";
+            this.Load += new System.EventHandler(this.FormAddAmmenitiesBooking_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.addsailtitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -42,8 +43,10 @@
             this.sailtimetitle = new System.Windows.Forms.Label();
             this.saildatetxt = new System.Windows.Forms.Label();
             this.sailclientIDtitle = new System.Windows.Forms.Label();
+            this.formAddSailingBookingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.formAddSailingBookingBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -157,9 +160,9 @@
             this.sailboatIDtitle.AutoSize = true;
             this.sailboatIDtitle.Location = new System.Drawing.Point(63, 296);
             this.sailboatIDtitle.Name = "sailboatIDtitle";
-            this.sailboatIDtitle.Size = new System.Drawing.Size(48, 15);
+            this.sailboatIDtitle.Size = new System.Drawing.Size(69, 15);
             this.sailboatIDtitle.TabIndex = 8;
-            this.sailboatIDtitle.Text = "Boat ID:";
+            this.sailboatIDtitle.Text = "Boat Name:";
             this.sailboatIDtitle.Click += new System.EventHandler(this.sailboatIDtitle_Click);
             // 
             // saillocationtitle
@@ -198,6 +201,10 @@
             this.sailclientIDtitle.TabIndex = 1;
             this.sailclientIDtitle.Text = "Client ID:";
             // 
+            // formAddSailingBookingBindingSource
+            // 
+            this.formAddSailingBookingBindingSource.DataSource = typeof(_471Frontend.FormAddSailingBooking);
+            // 
             // FormAddSailingBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -213,6 +220,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.formAddSailingBookingBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -233,5 +241,6 @@
         private ComboBox sailclientIDtxt;
         private ComboBox saillocationtxt;
         private ComboBox sailboatIDtxt;
+        private BindingSource formAddSailingBookingBindingSource;
     }
 }
