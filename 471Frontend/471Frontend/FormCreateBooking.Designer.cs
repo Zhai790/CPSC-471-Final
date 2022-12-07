@@ -36,16 +36,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.sailingbookingtitle = new System.Windows.Forms.Label();
             this.submitbtnnewbookingSailing = new System.Windows.Forms.Button();
-            this.ziptxt = new System.Windows.Forms.TextBox();
-            this.addresstxt = new System.Windows.Forms.TextBox();
             this.emailtxt = new System.Windows.Forms.TextBox();
             this.phonetxt = new System.Windows.Forms.TextBox();
             this.lnametxt = new System.Windows.Forms.TextBox();
             this.fnametxt = new System.Windows.Forms.TextBox();
-            this.zip = new System.Windows.Forms.Label();
             this.phone = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.Label();
-            this.address = new System.Windows.Forms.Label();
             this.lname = new System.Windows.Forms.Label();
             this.sustomerinfotitle = new System.Windows.Forms.Label();
             this.selectboattype = new System.Windows.Forms.Label();
@@ -69,6 +65,18 @@
             this.loactiontitleammenities = new System.Windows.Forms.Label();
             this.ammenitiesTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ammenitiesselextlocationbox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Provincetxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.AptNotxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Streettxt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SANumbertxt = new System.Windows.Forms.TextBox();
+            this.Citytxt = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ziptitle = new System.Windows.Forms.Label();
+            this.addresstitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -117,18 +125,26 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.Provincetxt);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.AptNotxt);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.Streettxt);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.SANumbertxt);
+            this.panel2.Controls.Add(this.Citytxt);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.ziptitle);
+            this.panel2.Controls.Add(this.addresstitle);
             this.panel2.Controls.Add(this.sailingbookingtitle);
             this.panel2.Controls.Add(this.submitbtnnewbookingSailing);
-            this.panel2.Controls.Add(this.ziptxt);
-            this.panel2.Controls.Add(this.addresstxt);
             this.panel2.Controls.Add(this.emailtxt);
             this.panel2.Controls.Add(this.phonetxt);
             this.panel2.Controls.Add(this.lnametxt);
             this.panel2.Controls.Add(this.fnametxt);
-            this.panel2.Controls.Add(this.zip);
             this.panel2.Controls.Add(this.phone);
             this.panel2.Controls.Add(this.email);
-            this.panel2.Controls.Add(this.address);
             this.panel2.Controls.Add(this.lname);
             this.panel2.Controls.Add(this.sustomerinfotitle);
             this.panel2.Controls.Add(this.selectboattype);
@@ -167,20 +183,6 @@
             this.submitbtnnewbookingSailing.Text = "Submit";
             this.submitbtnnewbookingSailing.UseVisualStyleBackColor = false;
             // 
-            // ziptxt
-            // 
-            this.ziptxt.Location = new System.Drawing.Point(496, 355);
-            this.ziptxt.Name = "ziptxt";
-            this.ziptxt.Size = new System.Drawing.Size(190, 23);
-            this.ziptxt.TabIndex = 8;
-            // 
-            // addresstxt
-            // 
-            this.addresstxt.Location = new System.Drawing.Point(496, 284);
-            this.addresstxt.Name = "addresstxt";
-            this.addresstxt.Size = new System.Drawing.Size(487, 23);
-            this.addresstxt.TabIndex = 9;
-            // 
             // emailtxt
             // 
             this.emailtxt.Location = new System.Drawing.Point(793, 215);
@@ -209,15 +211,6 @@
             this.fnametxt.Size = new System.Drawing.Size(190, 23);
             this.fnametxt.TabIndex = 13;
             // 
-            // zip
-            // 
-            this.zip.AutoSize = true;
-            this.zip.Location = new System.Drawing.Point(496, 337);
-            this.zip.Name = "zip";
-            this.zip.Size = new System.Drawing.Size(27, 15);
-            this.zip.TabIndex = 16;
-            this.zip.Text = "ZIP:";
-            // 
             // phone
             // 
             this.phone.AutoSize = true;
@@ -235,15 +228,6 @@
             this.email.Size = new System.Drawing.Size(39, 15);
             this.email.TabIndex = 14;
             this.email.Text = "Email:";
-            // 
-            // address
-            // 
-            this.address.AutoSize = true;
-            this.address.Location = new System.Drawing.Point(496, 266);
-            this.address.Name = "address";
-            this.address.Size = new System.Drawing.Size(52, 15);
-            this.address.TabIndex = 13;
-            this.address.Text = "Address:";
             // 
             // lname
             // 
@@ -473,6 +457,102 @@
             this.ammenitiesselextlocationbox.Size = new System.Drawing.Size(218, 23);
             this.ammenitiesselextlocationbox.TabIndex = 2;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(492, 317);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 15);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Province:";
+            // 
+            // Provincetxt
+            // 
+            this.Provincetxt.Location = new System.Drawing.Point(496, 335);
+            this.Provincetxt.Name = "Provincetxt";
+            this.Provincetxt.Size = new System.Drawing.Size(87, 23);
+            this.Provincetxt.TabIndex = 31;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(910, 265);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 15);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Apt_No:";
+            // 
+            // AptNotxt
+            // 
+            this.AptNotxt.Location = new System.Drawing.Point(910, 283);
+            this.AptNotxt.Name = "AptNotxt";
+            this.AptNotxt.Size = new System.Drawing.Size(73, 23);
+            this.AptNotxt.TabIndex = 29;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(616, 265);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 15);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Street:";
+            // 
+            // Streettxt
+            // 
+            this.Streettxt.Location = new System.Drawing.Point(616, 283);
+            this.Streettxt.Name = "Streettxt";
+            this.Streettxt.Size = new System.Drawing.Size(256, 23);
+            this.Streettxt.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(496, 265);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 15);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "S_A_Number:";
+            // 
+            // SANumbertxt
+            // 
+            this.SANumbertxt.Location = new System.Drawing.Point(496, 283);
+            this.SANumbertxt.Name = "SANumbertxt";
+            this.SANumbertxt.Size = new System.Drawing.Size(78, 23);
+            this.SANumbertxt.TabIndex = 25;
+            // 
+            // Citytxt
+            // 
+            this.Citytxt.Location = new System.Drawing.Point(614, 335);
+            this.Citytxt.Name = "Citytxt";
+            this.Citytxt.Size = new System.Drawing.Size(115, 23);
+            this.Citytxt.TabIndex = 24;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(750, 335);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(72, 23);
+            this.textBox1.TabIndex = 23;
+            // 
+            // ziptitle
+            // 
+            this.ziptitle.AutoSize = true;
+            this.ziptitle.Location = new System.Drawing.Point(746, 317);
+            this.ziptitle.Name = "ziptitle";
+            this.ziptitle.Size = new System.Drawing.Size(27, 15);
+            this.ziptitle.TabIndex = 22;
+            this.ziptitle.Text = "ZIP:";
+            // 
+            // addresstitle
+            // 
+            this.addresstitle.AutoSize = true;
+            this.addresstitle.Location = new System.Drawing.Point(614, 317);
+            this.addresstitle.Name = "addresstitle";
+            this.addresstitle.Size = new System.Drawing.Size(31, 15);
+            this.addresstitle.TabIndex = 21;
+            this.addresstitle.Text = "City:";
+            // 
             // FormCreateBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -510,16 +590,12 @@
         private Label sustomerinfotitle;
         private Label selectboattype;
         private ComboBox comboBox1;
-        private TextBox ziptxt;
-        private TextBox addresstxt;
         private TextBox emailtxt;
         private TextBox phonetxt;
         private TextBox lnametxt;
         private TextBox fnametxt;
-        private Label zip;
         private Label phone;
         private Label email;
-        private Label address;
         private Label lname;
         private Button submitbtnnewbookingSailing;
         private Panel panel3;
@@ -536,5 +612,17 @@
         private ComboBox ammenitiesselextlocationbox;
         private Label sailingbookingtitle;
         private Label ammenitesbookingtitle;
+        private Label label4;
+        private TextBox Provincetxt;
+        private Label label3;
+        private TextBox AptNotxt;
+        private Label label2;
+        private TextBox Streettxt;
+        private Label label1;
+        private TextBox SANumbertxt;
+        private TextBox Citytxt;
+        private TextBox textBox1;
+        private Label ziptitle;
+        private Label addresstitle;
     }
 }
