@@ -64,6 +64,7 @@ namespace _471Frontend
             ExternalClientBooking cb = new ExternalClientBooking(TimeOnly.Parse(sailstarttime.Text), sailDatePicker.Value.Date, Convert.ToInt32(locationoptions.Text), Convert.ToInt32(boatOptions.Text), fnametxt.Text, lnametxt.Text);
             
             cb.ClientID = DbBoatBookings.FindClientID(cb);
+            cb.BookingID = DbBoatBookings.GetID("Booking_ID", "booking") + 1;
             DbBoatBookings.AddBooking(cb);
             Clear();
         }
@@ -92,6 +93,7 @@ namespace _471Frontend
         {
             if (!DbBoatBookings.CheckMembership(Convert.ToInt32(memberinputtxt.Text)))
             {
+                MessageBox.Show("Sorry, Invalid Membership. Please Try Again");
                 return;
             }
             ExternalMemberBooking imb = new ExternalMemberBooking(amenLocationBox.Text, Convert.ToInt32(amenBookingbox.Text.Trim()));

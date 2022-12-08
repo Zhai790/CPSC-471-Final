@@ -279,11 +279,11 @@ namespace _471Frontend
 
         public static void AddBooking(ExternalClientBooking cb)
         {
-            string sql = "INSERT INTO booking VALUES (@Time, @Date, @Location); INSERT INTO reserves VALUES (@Boat_ID, @Client_ID)";
+            string sql = "INSERT INTO booking VALUES (NULL, @Time, @Date, @Location); INSERT INTO reserves VALUES (@Booking_ID, @Boat_ID, @Client_ID)";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
-            //cmd.Parameters.Add("@Booking_ID", MySqlDbType.Int32).Value = cb.ClientID;
+            cmd.Parameters.Add("@Booking_ID", MySqlDbType.Int32).Value = cb.BookingID;
             cmd.Parameters.Add("@Time", MySqlDbType.Time).Value = cb.Time;
             cmd.Parameters.Add("@Date", MySqlDbType.Date).Value = cb.Date.Date;
             cmd.Parameters.Add("@Location", MySqlDbType.VarChar).Value = cb.Location;

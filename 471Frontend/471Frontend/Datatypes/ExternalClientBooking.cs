@@ -17,7 +17,7 @@ namespace _471Frontend.Datatypes
         public int ClientID { get; set; }
         public int BoatID { get; set; }
 
-        public int bookingIDCounter = 2;    //find another solution
+        public int BookingID { get; set; }  
 
         public ExternalClientBooking(TimeOnly time, DateTime date, int location, int boatID, string fname, string lname)
         {
