@@ -106,14 +106,14 @@ namespace _471Frontend
         {
             if (submitbtnsail.Text == "Submit")
             {
-                ClientBooking cb = new ClientBooking(TimeOnly.Parse(sailstarttime.Text), sailtimepicker.Value.Date, saillocationtxt.Text.Trim(), Convert.ToInt32(sailclientIDtxt.Text.Trim()), Convert.ToInt32(sailboatIDtxt.Text.Trim()));
+                InternalClientBooking cb = new InternalClientBooking(TimeOnly.Parse(sailstarttime.Text), sailtimepicker.Value.Date, saillocationtxt.Text.Trim(), Convert.ToInt32(sailclientIDtxt.Text.Trim()), Convert.ToInt32(sailboatIDtxt.Text.Trim()));
                 DbBoatBookings.AddBooking(cb, cb.bookingIDCounter);
                 Clear();
             }
             if (submitbtnsail.Text == "Update")
             {
 
-                ClientBooking cb = new ClientBooking(TimeOnly.Parse(sailstarttime.Text), sailtimepicker.Value.Date, saillocationtxt.Text.Trim(), Convert.ToInt32(sailclientIDtxt.Text.Trim()), Convert.ToInt32(sailboatIDtxt.Text.Trim()));
+                InternalClientBooking cb = new InternalClientBooking(TimeOnly.Parse(sailstarttime.Text), sailtimepicker.Value.Date, saillocationtxt.Text.Trim(), Convert.ToInt32(sailclientIDtxt.Text.Trim()), Convert.ToInt32(sailboatIDtxt.Text.Trim()));
                 DbBoatBookings.UpdateBooking(cb, BookingID);
                 Clear();
             }

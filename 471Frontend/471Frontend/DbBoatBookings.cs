@@ -154,7 +154,7 @@ namespace _471Frontend
             con.Close();
         }
 
-        public static void AddBooking(ClientBooking cb, int bookingIDCounter)
+        public static void AddBooking(InternalClientBooking cb, int bookingIDCounter)
         {
             string sql = "INSERT INTO booking VALUES (@Booking_ID, @Time, @Date, @Location); INSERT INTO reserves VALUES (@Booking_ID, @Boat_ID, @Client_ID)"; 
             MySqlConnection con = GetConnection();
@@ -178,7 +178,7 @@ namespace _471Frontend
             con.Close();
         }
 
-        public static void UpdateBooking(ClientBooking cb, int id)
+        public static void UpdateBooking(InternalClientBooking cb, int id)
         {
             string sql = "UPDATE booking SET Time = @Time, Date = @Date, Located_At = @Location WHERE Booking_ID = @BookingID; UPDATE reserves SET Boat_ID = @BoatID, CLient_ID = @ClientID WHERE Booking_ID = @BookingID";
             MySqlConnection con = GetConnection();
@@ -217,6 +217,60 @@ namespace _471Frontend
             catch (MySqlException ex)
             {
                 MessageBox.Show("Client Booking Deletion Failed!" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+        /*
+         * 
+         * CLIENT's OWN BOOKINGS
+         * 
+         */
+
+        public static int FindClientID(ExternalClientBooking ecb)
+        {
+            int clientID = 0;
+            string ClientQuery = "SELECT Client_ID FROM clients WHERE FName = @fname AND LName = @lname";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(ClientQuery, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@fname", MySqlDbType.VarChar).Value = ecb.Fname;
+            cmd.Parameters.Add("@lname", MySqlDbType.VarChar).Value = ecb.Lname;
+
+            try
+            {
+                clientID = (Int32)cmd.ExecuteScalar();
+                MessageBox.Show("Client Found!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("This Client Does Not Exist!" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FindClientID(ecb);
+            }
+            con.Close();
+            return clientID;
+        }
+
+        public static void AddBooking(ExternalClientBooking cb)
+        {
+            string sql = "INSERT INTO booking VALUES (@Booking_ID, @Time, @Date, @Location); INSERT INTO reserves VALUES (@Booking_ID, @Boat_ID, @Client_ID)";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@Booking_ID", MySqlDbType.Int32).Value = cb.ClientID;
+            cmd.Parameters.Add("@Time", MySqlDbType.Time).Value = cb.Time;
+            cmd.Parameters.Add("@Date", MySqlDbType.Date).Value = cb.Date.Date;
+            cmd.Parameters.Add("@Location", MySqlDbType.VarChar).Value = cb.Location;
+            cmd.Parameters.Add("@Boat_ID", MySqlDbType.Int32).Value = cb.BoatID;
+            cmd.Parameters.Add("@Client_ID", MySqlDbType.Int32).Value = cb.ClientID;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Added Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("New Booking Not Inserted!" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }

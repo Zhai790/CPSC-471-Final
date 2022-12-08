@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-public class ClientBooking
+public class InternalClientBooking
 {
     public TimeOnly Time { get; set; }
     public DateTime Date { get; set; }
@@ -13,7 +13,7 @@ public class ClientBooking
 
     public int bookingIDCounter = 2;    //find another solution
 
-    public ClientBooking(TimeOnly time, DateTime date, string location, int clientID, int boatID)
+    public InternalClientBooking(TimeOnly time, DateTime date, string location, int clientID, int boatID)
 	{
         Time = time;
         Date = date;

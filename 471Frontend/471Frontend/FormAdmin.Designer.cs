@@ -301,11 +301,11 @@
             // 
             // bookingBindingSource2
             // 
-            this.bookingBindingSource2.DataSource = typeof(ClientBooking);
+            this.bookingBindingSource2.DataSource = typeof(InternalClientBooking);
             // 
             // bookingBindingSource
             // 
-            this.bookingBindingSource.DataSource = typeof(ClientBooking);
+            this.bookingBindingSource.DataSource = typeof(InternalClientBooking);
             // 
             // panel3
             // 
@@ -512,7 +512,7 @@
             // 
             // bookingBindingSource1
             // 
-            this.bookingBindingSource1.DataSource = typeof(ClientBooking);
+            this.bookingBindingSource1.DataSource = typeof(InternalClientBooking);
             // 
             // formAddClientBindingSource
             // 

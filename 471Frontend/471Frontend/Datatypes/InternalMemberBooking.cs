@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _471Frontend.Datatypes
 {
-    internal class MemberBooking
+    internal class InternalMemberBooking
     {
         public TimeOnly Time { get; set; }
         public DateOnly Date { get; set; }
@@ -19,7 +19,7 @@ namespace _471Frontend.Datatypes
         public int Num_Lanes { get; set; }
         public int PoolSize { get; set; }
 
-        public MemberBooking(TimeOnly time, DateOnly date, string location, int clientID, int boatID, int ammenitiesID, int numGrills, int numLanes, int poolSize)
+        public InternalMemberBooking(TimeOnly time, DateOnly date, string location, int clientID, int boatID, int ammenitiesID, int numGrills, int numLanes, int poolSize)
         {
             Time = time;
             Date = date;
