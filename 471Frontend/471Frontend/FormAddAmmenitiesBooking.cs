@@ -64,7 +64,7 @@ namespace _471Frontend
             if (submitbtnammenities.Text == "Submit")
             {
                 InternalMemberBooking imb = new InternalMemberBooking(saillocationtxt.Text.Trim(), Convert.ToInt32(sailclientIDtxt.Text.Trim()), Convert.ToInt32(bookingIDtxt.Text.Trim()));
-                AmmenitiesID = DbBoatBookings.getID("Amenities_ID", "amenities")+1;
+                AmmenitiesID = DbBoatBookings.GetID("Amenities_ID", "amenities")+1;
                 DbBoatBookings.AddMemBooking(imb, AmmenitiesID);
                 Clear();
             }

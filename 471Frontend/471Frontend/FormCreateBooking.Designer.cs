@@ -50,17 +50,13 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.ammenitesbookingtitle = new System.Windows.Forms.Label();
-            this.submitnewbookingammenities = new System.Windows.Forms.Button();
+            this.newAmmenitiesSbmt = new System.Windows.Forms.Button();
             this.memberinputtxt = new System.Windows.Forms.TextBox();
             this.membernumtitle = new System.Windows.Forms.Label();
             this.selectammenitiestitle = new System.Windows.Forms.Label();
-            this.ammenitiesselectbox = new System.Windows.Forms.ComboBox();
-            this.ammenitiesdatePicker = new System.Windows.Forms.DateTimePicker();
-            this.ammenitiesselecttimetitle = new System.Windows.Forms.Label();
-            this.ammenitiesselectdate = new System.Windows.Forms.Label();
+            this.amenBookingbox = new System.Windows.Forms.ComboBox();
             this.loactiontitleammenities = new System.Windows.Forms.Label();
-            this.ammenitiesTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.ammenitiesselextlocationbox = new System.Windows.Forms.ComboBox();
+            this.amenLocationBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -154,7 +150,7 @@
             // 
             this.sailingbookingtitle.AutoSize = true;
             this.sailingbookingtitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.sailingbookingtitle.Location = new System.Drawing.Point(360, 21);
+            this.sailingbookingtitle.Location = new System.Drawing.Point(386, 20);
             this.sailingbookingtitle.Name = "sailingbookingtitle";
             this.sailingbookingtitle.Size = new System.Drawing.Size(291, 32);
             this.sailingbookingtitle.TabIndex = 19;
@@ -165,7 +161,7 @@
             this.submitbtnnewbookingSailing.BackColor = System.Drawing.Color.LightSlateGray;
             this.submitbtnnewbookingSailing.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.submitbtnnewbookingSailing.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.submitbtnnewbookingSailing.Location = new System.Drawing.Point(530, 258);
+            this.submitbtnnewbookingSailing.Location = new System.Drawing.Point(530, 310);
             this.submitbtnnewbookingSailing.Name = "submitbtnnewbookingSailing";
             this.submitbtnnewbookingSailing.Size = new System.Drawing.Size(487, 51);
             this.submitbtnnewbookingSailing.TabIndex = 17;
@@ -268,47 +264,45 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel3.Controls.Add(this.ammenitesbookingtitle);
-            this.panel3.Controls.Add(this.submitnewbookingammenities);
+            this.panel3.Controls.Add(this.newAmmenitiesSbmt);
             this.panel3.Controls.Add(this.memberinputtxt);
             this.panel3.Controls.Add(this.membernumtitle);
             this.panel3.Controls.Add(this.selectammenitiestitle);
-            this.panel3.Controls.Add(this.ammenitiesselectbox);
-            this.panel3.Controls.Add(this.ammenitiesdatePicker);
-            this.panel3.Controls.Add(this.ammenitiesselecttimetitle);
-            this.panel3.Controls.Add(this.ammenitiesselectdate);
+            this.panel3.Controls.Add(this.amenBookingbox);
             this.panel3.Controls.Add(this.loactiontitleammenities);
-            this.panel3.Controls.Add(this.ammenitiesTimePicker);
-            this.panel3.Controls.Add(this.ammenitiesselextlocationbox);
+            this.panel3.Controls.Add(this.amenLocationBox);
             this.panel3.Location = new System.Drawing.Point(58, 567);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1104, 319);
             this.panel3.TabIndex = 8;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // ammenitesbookingtitle
             // 
             this.ammenitesbookingtitle.AutoSize = true;
             this.ammenitesbookingtitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ammenitesbookingtitle.Location = new System.Drawing.Point(345, 21);
+            this.ammenitesbookingtitle.Location = new System.Drawing.Point(370, 20);
             this.ammenitesbookingtitle.Name = "ammenitesbookingtitle";
             this.ammenitesbookingtitle.Size = new System.Drawing.Size(350, 32);
             this.ammenitesbookingtitle.TabIndex = 18;
             this.ammenitesbookingtitle.Text = "Ammenities Booking Request";
             // 
-            // submitnewbookingammenities
+            // newAmmenitiesSbmt
             // 
-            this.submitnewbookingammenities.BackColor = System.Drawing.Color.LightSlateGray;
-            this.submitnewbookingammenities.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.submitnewbookingammenities.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.submitnewbookingammenities.Location = new System.Drawing.Point(866, 223);
-            this.submitnewbookingammenities.Name = "submitnewbookingammenities";
-            this.submitnewbookingammenities.Size = new System.Drawing.Size(117, 51);
-            this.submitnewbookingammenities.TabIndex = 17;
-            this.submitnewbookingammenities.Text = "Submit";
-            this.submitnewbookingammenities.UseVisualStyleBackColor = false;
+            this.newAmmenitiesSbmt.BackColor = System.Drawing.Color.LightSlateGray;
+            this.newAmmenitiesSbmt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.newAmmenitiesSbmt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.newAmmenitiesSbmt.Location = new System.Drawing.Point(292, 215);
+            this.newAmmenitiesSbmt.Name = "newAmmenitiesSbmt";
+            this.newAmmenitiesSbmt.Size = new System.Drawing.Size(487, 51);
+            this.newAmmenitiesSbmt.TabIndex = 17;
+            this.newAmmenitiesSbmt.Text = "Submit";
+            this.newAmmenitiesSbmt.UseVisualStyleBackColor = false;
+            this.newAmmenitiesSbmt.Click += new System.EventHandler(this.newAmmenitiesSbmt_Click);
             // 
             // memberinputtxt
             // 
-            this.memberinputtxt.Location = new System.Drawing.Point(616, 100);
+            this.memberinputtxt.Location = new System.Drawing.Point(706, 128);
             this.memberinputtxt.Name = "memberinputtxt";
             this.memberinputtxt.Size = new System.Drawing.Size(218, 23);
             this.memberinputtxt.TabIndex = 12;
@@ -317,7 +311,7 @@
             // 
             this.membernumtitle.AutoSize = true;
             this.membernumtitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.membernumtitle.Location = new System.Drawing.Point(616, 72);
+            this.membernumtitle.Location = new System.Drawing.Point(706, 100);
             this.membernumtitle.Name = "membernumtitle";
             this.membernumtitle.Size = new System.Drawing.Size(172, 25);
             this.membernumtitle.TabIndex = 11;
@@ -327,79 +321,45 @@
             // 
             this.selectammenitiestitle.AutoSize = true;
             this.selectammenitiestitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.selectammenitiestitle.Location = new System.Drawing.Point(616, 151);
+            this.selectammenitiestitle.Location = new System.Drawing.Point(446, 100);
             this.selectammenitiestitle.Name = "selectammenitiestitle";
-            this.selectammenitiestitle.Size = new System.Drawing.Size(148, 25);
+            this.selectammenitiestitle.Size = new System.Drawing.Size(150, 25);
             this.selectammenitiestitle.TabIndex = 10;
-            this.selectammenitiestitle.Text = "Select Amenity:";
+            this.selectammenitiestitle.Text = "Select Booking:";
+            this.selectammenitiestitle.Click += new System.EventHandler(this.selectammenitiestitle_Click);
             // 
-            // ammenitiesselectbox
+            // amenBookingbox
             // 
-            this.ammenitiesselectbox.FormattingEnabled = true;
-            this.ammenitiesselectbox.Items.AddRange(new object[] {
+            this.amenBookingbox.FormattingEnabled = true;
+            this.amenBookingbox.Items.AddRange(new object[] {
             "Swimming Pool",
             "Barbeque"});
-            this.ammenitiesselectbox.Location = new System.Drawing.Point(616, 179);
-            this.ammenitiesselectbox.Name = "ammenitiesselectbox";
-            this.ammenitiesselectbox.Size = new System.Drawing.Size(218, 23);
-            this.ammenitiesselectbox.TabIndex = 9;
-            // 
-            // ammenitiesdatePicker
-            // 
-            this.ammenitiesdatePicker.Location = new System.Drawing.Point(135, 179);
-            this.ammenitiesdatePicker.Name = "ammenitiesdatePicker";
-            this.ammenitiesdatePicker.Size = new System.Drawing.Size(218, 23);
-            this.ammenitiesdatePicker.TabIndex = 8;
-            // 
-            // ammenitiesselecttimetitle
-            // 
-            this.ammenitiesselecttimetitle.AutoSize = true;
-            this.ammenitiesselecttimetitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ammenitiesselecttimetitle.Location = new System.Drawing.Point(135, 235);
-            this.ammenitiesselecttimetitle.Name = "ammenitiesselecttimetitle";
-            this.ammenitiesselecttimetitle.Size = new System.Drawing.Size(117, 25);
-            this.ammenitiesselecttimetitle.TabIndex = 7;
-            this.ammenitiesselecttimetitle.Text = "Select Time:";
-            // 
-            // ammenitiesselectdate
-            // 
-            this.ammenitiesselectdate.AutoSize = true;
-            this.ammenitiesselectdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ammenitiesselectdate.Location = new System.Drawing.Point(135, 151);
-            this.ammenitiesselectdate.Name = "ammenitiesselectdate";
-            this.ammenitiesselectdate.Size = new System.Drawing.Size(115, 25);
-            this.ammenitiesselectdate.TabIndex = 6;
-            this.ammenitiesselectdate.Text = "Select Date:";
+            this.amenBookingbox.Location = new System.Drawing.Point(446, 128);
+            this.amenBookingbox.Name = "amenBookingbox";
+            this.amenBookingbox.Size = new System.Drawing.Size(218, 23);
+            this.amenBookingbox.TabIndex = 9;
             // 
             // loactiontitleammenities
             // 
             this.loactiontitleammenities.AutoSize = true;
             this.loactiontitleammenities.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.loactiontitleammenities.Location = new System.Drawing.Point(135, 72);
+            this.loactiontitleammenities.Location = new System.Drawing.Point(179, 100);
             this.loactiontitleammenities.Name = "loactiontitleammenities";
             this.loactiontitleammenities.Size = new System.Drawing.Size(151, 25);
             this.loactiontitleammenities.TabIndex = 5;
             this.loactiontitleammenities.Text = "Select Location:";
             // 
-            // ammenitiesTimePicker
+            // amenLocationBox
             // 
-            this.ammenitiesTimePicker.Location = new System.Drawing.Point(135, 263);
-            this.ammenitiesTimePicker.Name = "ammenitiesTimePicker";
-            this.ammenitiesTimePicker.Size = new System.Drawing.Size(218, 23);
-            this.ammenitiesTimePicker.TabIndex = 4;
-            this.ammenitiesTimePicker.ValueChanged += new System.EventHandler(this.ammenitiesTimePicker_ValueChanged);
-            // 
-            // ammenitiesselextlocationbox
-            // 
-            this.ammenitiesselextlocationbox.FormattingEnabled = true;
-            this.ammenitiesselextlocationbox.Items.AddRange(new object[] {
+            this.amenLocationBox.FormattingEnabled = true;
+            this.amenLocationBox.Items.AddRange(new object[] {
             "Location 1",
             "Location 2",
             "Location 3"});
-            this.ammenitiesselextlocationbox.Location = new System.Drawing.Point(135, 100);
-            this.ammenitiesselextlocationbox.Name = "ammenitiesselextlocationbox";
-            this.ammenitiesselextlocationbox.Size = new System.Drawing.Size(218, 23);
-            this.ammenitiesselextlocationbox.TabIndex = 2;
+            this.amenLocationBox.Location = new System.Drawing.Point(179, 128);
+            this.amenLocationBox.Name = "amenLocationBox";
+            this.amenLocationBox.Size = new System.Drawing.Size(218, 23);
+            this.amenLocationBox.TabIndex = 2;
             // 
             // FormCreateBooking
             // 
@@ -442,17 +402,13 @@
         private Label lname;
         private Button submitbtnnewbookingSailing;
         private Panel panel3;
-        private Button submitnewbookingammenities;
+        private Button newAmmenitiesSbmt;
         private TextBox memberinputtxt;
         private Label membernumtitle;
         private Label selectammenitiestitle;
-        private ComboBox ammenitiesselectbox;
-        private DateTimePicker ammenitiesdatePicker;
-        private Label ammenitiesselecttimetitle;
-        private Label ammenitiesselectdate;
+        private ComboBox amenBookingbox;
         private Label loactiontitleammenities;
-        private DateTimePicker ammenitiesTimePicker;
-        private ComboBox ammenitiesselextlocationbox;
+        private ComboBox amenLocationBox;
         private Label sailingbookingtitle;
         private Label ammenitesbookingtitle;
         private DateTimePicker sailDatePicker;

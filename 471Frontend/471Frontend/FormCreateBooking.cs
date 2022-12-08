@@ -17,14 +17,14 @@ namespace _471Frontend
         {
             InitializeComponent();
 
-            this.ammenitiesTimePicker.CustomFormat = "hh:00 tt";
-            this.ammenitiesTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ammenitiesTimePicker.ShowUpDown = true;
+            //this.ammenitiesTimePicker.CustomFormat = "hh:00 tt";
+            //this.ammenitiesTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            //this.ammenitiesTimePicker.ShowUpDown = true;
         }
 
         public void Clear()
         {
-            fnametxt.Text = lnametxt.Text = string.Empty;
+            fnametxt.Text = lnametxt.Text = memberinputtxt.Text = string.Empty;
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -47,6 +47,11 @@ namespace _471Frontend
             DbBoatBookings.GetBooking(locationQuery, locationoptions, "Location_No");
             string boatQuery = "SELECT Boat_ID FROM boat";
             DbBoatBookings.GetBooking(boatQuery, boatOptions, "Boat_ID");
+
+            string memLocationQuery = "SELECT Location_NO FROM location";
+            DbBoatBookings.GetBooking(memLocationQuery, amenLocationBox, "Location_No");
+            string amenQuery = "SELECT Booking_ID FROM booking";
+            DbBoatBookings.GetBooking(amenQuery, amenBookingbox, "Booking_ID");
         }
 
         private void Panel2_Paint(object sender, PaintEventArgs e)
@@ -71,6 +76,29 @@ namespace _471Frontend
         private void selectboattype_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void selectammenitiestitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void newAmmenitiesSbmt_Click(object sender, EventArgs e)
+        {
+            if (!DbBoatBookings.CheckMembership(Convert.ToInt32(memberinputtxt.Text)))
+            {
+                return;
+            }
+            ExternalMemberBooking imb = new ExternalMemberBooking(amenLocationBox.Text, Convert.ToInt32(amenBookingbox.Text.Trim()));
+            imb.AmmenitiesID = DbBoatBookings.GetID("Amenities_ID", "amenities") + 1;
+            imb.ClientID = DbBoatBookings.MembershipToID(Convert.ToInt32(memberinputtxt.Text));
+            DbBoatBookings.AddMemBooking(imb);
+            Clear();
         }
     }
 }

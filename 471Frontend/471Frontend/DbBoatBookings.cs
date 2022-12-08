@@ -35,7 +35,7 @@ namespace _471Frontend
         * General Use 
         * 
         */
-        public static int getID(string tableID, string table)
+        public static int GetID(string tableID, string table)
         {
             int id = 0;
             string sql = "SELECT max(" + tableID + ") FROM " + table + "";
@@ -374,6 +374,80 @@ namespace _471Frontend
             catch (MySqlException ex)
             {
                 MessageBox.Show("Member Booking Deletion Failed!" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+        /*
+         * 
+         * MEMBER BOOKINGS
+         * 
+         */
+        public static Boolean CheckMembership(int cardNum)
+        {
+            Boolean exist = false;
+            string ClientQuery = "SELECT Card_ID FROM member_has_membership_card WHERE Card_ID = @num";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(ClientQuery, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@num", MySqlDbType.Int32).Value = cardNum;
+
+            try
+            {
+                if(cmd.ExecuteScalar() != null)
+                {
+                    exist = true;
+                    MessageBox.Show("Membership Found!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Sorry, You Are Not a Member!" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+            return exist;
+        }
+
+        public static int MembershipToID(int cardNum)
+        {
+            int id = 0;
+            string ClientQuery = "SELECT Client_ID FROM member_has_membership_card WHERE Card_ID = @num";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(ClientQuery, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@num", MySqlDbType.Int32).Value = cardNum;
+
+            try
+            {
+                id = (Int32)cmd.ExecuteScalar();
+                MessageBox.Show("Client Identified!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Incorrect Card Number, Please Check Again!" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+            return id;
+        }
+
+        public static void AddMemBooking(ExternalMemberBooking emb)
+        {
+            string sql = "INSERT INTO amenities VALUES (NULL, @Location); INSERT INTO books VALUES (@Booking_ID, @AmenitiesID, @Client_ID)";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@Location", MySqlDbType.VarChar).Value = emb.Location;
+            cmd.Parameters.Add("@Booking_ID", MySqlDbType.Int32).Value = emb.BookingID;
+            cmd.Parameters.Add("@AmenitiesID", MySqlDbType.Int32).Value = emb.AmmenitiesID;
+            cmd.Parameters.Add("@Client_ID", MySqlDbType.Int32).Value = emb.ClientID;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Added Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Member's New Booking Not Inserted!" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
