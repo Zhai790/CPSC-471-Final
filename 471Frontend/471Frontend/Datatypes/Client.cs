@@ -18,7 +18,6 @@ namespace _471Frontend.Datatypes
         public int Apt_No { get; set; }
         public string Province { get; set; }
         public string Zip { get; set; }
-        public List<Booking> BookingIDs { get; set; }
 
         public Client(string fname, string lname, string phone, string email, string city, int s_A_Number, string street, int apt_No, string province, string zip)
         {
@@ -32,7 +31,6 @@ namespace _471Frontend.Datatypes
             Apt_No = apt_No;
             Province = province;
             Zip = zip;
-            BookingIDs = new List<Booking>();
         }
 
         
