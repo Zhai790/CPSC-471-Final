@@ -180,7 +180,7 @@ namespace _471Frontend
 
         public static void UpdateBooking(ClientBooking cb, int id)
         {
-            string sql = "UPDATE booking SET (Time = @Time, Date = @Date, Located_At = @Location) WHERE Booking_ID = @BookingID; UPDATE reserves SET (Boat_ID = @BoatID, CLient_ID = @ClientID) WHERE Booking_ID = @BookingID";
+            string sql = "UPDATE booking SET Time = @Time, Date = @Date, Located_At = @Location WHERE Booking_ID = @BookingID; UPDATE reserves SET Boat_ID = @BoatID, CLient_ID = @ClientID WHERE Booking_ID = @BookingID";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;

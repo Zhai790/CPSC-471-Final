@@ -38,11 +38,7 @@ namespace _471Frontend
             addsailtitle.Text = "Update Booking";
             submitbtnsail.Text = "Update";
 
-            sailclientIDtxt.Text = ClientID.ToString();
-            sailtimepicker.Text = Date.ToString();
-            sailstarttime.Text = Time.ToString();
-            saillocationtxt.Text = Location;
-            sailboatIDtxt.Text = BoatID.ToString();
+
         }
 
         public void SaveInfo()
@@ -112,17 +108,17 @@ namespace _471Frontend
             {
                 ClientBooking cb = new ClientBooking(TimeOnly.Parse(sailstarttime.Text), sailtimepicker.Value.Date, saillocationtxt.Text.Trim(), Convert.ToInt32(sailclientIDtxt.Text.Trim()), Convert.ToInt32(sailboatIDtxt.Text.Trim()));
                 DbBoatBookings.AddBooking(cb, cb.bookingIDCounter);
-                BookingID = cb.bookingIDCounter++;
                 Clear();
             }
             if (submitbtnsail.Text == "Update")
             {
+
                 ClientBooking cb = new ClientBooking(TimeOnly.Parse(sailstarttime.Text), sailtimepicker.Value.Date, saillocationtxt.Text.Trim(), Convert.ToInt32(sailclientIDtxt.Text.Trim()), Convert.ToInt32(sailboatIDtxt.Text.Trim()));
-                DbBoatBookings.AddBooking(cb, BookingID);
+                DbBoatBookings.UpdateBooking(cb, BookingID);
                 Clear();
             }
 
-            _parent.DisplayClient();
+            _parent.DisplaySailingBooking();
         }
     }
 }

@@ -548,13 +548,13 @@
             // 
             // sailClient
             // 
-            this.sailClient.DataPropertyName = "Boat_ID";
+            this.sailClient.DataPropertyName = "Client_ID";
             this.sailClient.HeaderText = "Client ID";
             this.sailClient.Name = "sailClient";
             // 
             // sailBoat
             // 
-            this.sailBoat.DataPropertyName = "Client_ID";
+            this.sailBoat.DataPropertyName = "Boat_ID";
             this.sailBoat.HeaderText = "Boat_ID";
             this.sailBoat.Name = "sailBoat";
             // 
@@ -582,10 +582,13 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CadetBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.Column16.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column16.HeaderText = "";
             this.Column16.Name = "Column16";
             this.Column16.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column16.Text = "Delete";
+            this.Column16.UseColumnTextForButtonValue = true;
             // 
             // FormAdmin
             // 

@@ -34,6 +34,18 @@
             this.locationoptions = new System.Windows.Forms.ComboBox();
             this.fname = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Provincetxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.AptNotxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Streettxt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SANumbertxt = new System.Windows.Forms.TextBox();
+            this.Citytxt = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ziptitle = new System.Windows.Forms.Label();
+            this.addresstitle = new System.Windows.Forms.Label();
             this.sailingbookingtitle = new System.Windows.Forms.Label();
             this.submitbtnnewbookingSailing = new System.Windows.Forms.Button();
             this.emailtxt = new System.Windows.Forms.TextBox();
@@ -45,7 +57,7 @@
             this.lname = new System.Windows.Forms.Label();
             this.sustomerinfotitle = new System.Windows.Forms.Label();
             this.selectboattype = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.boatOptions = new System.Windows.Forms.ComboBox();
             this.selectdatepicker = new System.Windows.Forms.DateTimePicker();
             this.selecttime = new System.Windows.Forms.Label();
             this.selectdate = new System.Windows.Forms.Label();
@@ -65,18 +77,6 @@
             this.loactiontitleammenities = new System.Windows.Forms.Label();
             this.ammenitiesTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ammenitiesselextlocationbox = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Provincetxt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.AptNotxt = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Streettxt = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SANumbertxt = new System.Windows.Forms.TextBox();
-            this.Citytxt = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.ziptitle = new System.Windows.Forms.Label();
-            this.addresstitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -149,7 +149,7 @@
             this.panel2.Controls.Add(this.sustomerinfotitle);
             this.panel2.Controls.Add(this.selectboattype);
             this.panel2.Controls.Add(this.fname);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.boatOptions);
             this.panel2.Controls.Add(this.selectdatepicker);
             this.panel2.Controls.Add(this.selecttime);
             this.panel2.Controls.Add(this.selectdate);
@@ -160,6 +160,102 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1104, 420);
             this.panel2.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(492, 317);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 15);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Province:";
+            // 
+            // Provincetxt
+            // 
+            this.Provincetxt.Location = new System.Drawing.Point(496, 335);
+            this.Provincetxt.Name = "Provincetxt";
+            this.Provincetxt.Size = new System.Drawing.Size(87, 23);
+            this.Provincetxt.TabIndex = 31;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(910, 265);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 15);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Apt_No:";
+            // 
+            // AptNotxt
+            // 
+            this.AptNotxt.Location = new System.Drawing.Point(910, 283);
+            this.AptNotxt.Name = "AptNotxt";
+            this.AptNotxt.Size = new System.Drawing.Size(73, 23);
+            this.AptNotxt.TabIndex = 29;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(616, 265);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 15);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Street:";
+            // 
+            // Streettxt
+            // 
+            this.Streettxt.Location = new System.Drawing.Point(616, 283);
+            this.Streettxt.Name = "Streettxt";
+            this.Streettxt.Size = new System.Drawing.Size(256, 23);
+            this.Streettxt.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(496, 265);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 15);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "S_A_Number:";
+            // 
+            // SANumbertxt
+            // 
+            this.SANumbertxt.Location = new System.Drawing.Point(496, 283);
+            this.SANumbertxt.Name = "SANumbertxt";
+            this.SANumbertxt.Size = new System.Drawing.Size(78, 23);
+            this.SANumbertxt.TabIndex = 25;
+            // 
+            // Citytxt
+            // 
+            this.Citytxt.Location = new System.Drawing.Point(614, 335);
+            this.Citytxt.Name = "Citytxt";
+            this.Citytxt.Size = new System.Drawing.Size(115, 23);
+            this.Citytxt.TabIndex = 24;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(750, 335);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(72, 23);
+            this.textBox1.TabIndex = 23;
+            // 
+            // ziptitle
+            // 
+            this.ziptitle.AutoSize = true;
+            this.ziptitle.Location = new System.Drawing.Point(746, 317);
+            this.ziptitle.Name = "ziptitle";
+            this.ziptitle.Size = new System.Drawing.Size(27, 15);
+            this.ziptitle.TabIndex = 22;
+            this.ziptitle.Text = "ZIP:";
+            // 
+            // addresstitle
+            // 
+            this.addresstitle.AutoSize = true;
+            this.addresstitle.Location = new System.Drawing.Point(614, 317);
+            this.addresstitle.Name = "addresstitle";
+            this.addresstitle.Size = new System.Drawing.Size(31, 15);
+            this.addresstitle.TabIndex = 21;
+            this.addresstitle.Text = "City:";
             // 
             // sailingbookingtitle
             // 
@@ -258,16 +354,16 @@
             this.selectboattype.TabIndex = 10;
             this.selectboattype.Text = "Select Boat:";
             // 
-            // comboBox1
+            // boatOptions
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.boatOptions.FormattingEnabled = true;
+            this.boatOptions.Items.AddRange(new object[] {
             "Sailboat",
             "Canoe"});
-            this.comboBox1.Location = new System.Drawing.Point(135, 354);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(218, 23);
-            this.comboBox1.TabIndex = 9;
+            this.boatOptions.Location = new System.Drawing.Point(135, 354);
+            this.boatOptions.Name = "boatOptions";
+            this.boatOptions.Size = new System.Drawing.Size(218, 23);
+            this.boatOptions.TabIndex = 9;
             // 
             // selectdatepicker
             // 
@@ -457,102 +553,6 @@
             this.ammenitiesselextlocationbox.Size = new System.Drawing.Size(218, 23);
             this.ammenitiesselextlocationbox.TabIndex = 2;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(492, 317);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 15);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Province:";
-            // 
-            // Provincetxt
-            // 
-            this.Provincetxt.Location = new System.Drawing.Point(496, 335);
-            this.Provincetxt.Name = "Provincetxt";
-            this.Provincetxt.Size = new System.Drawing.Size(87, 23);
-            this.Provincetxt.TabIndex = 31;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(910, 265);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 15);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Apt_No:";
-            // 
-            // AptNotxt
-            // 
-            this.AptNotxt.Location = new System.Drawing.Point(910, 283);
-            this.AptNotxt.Name = "AptNotxt";
-            this.AptNotxt.Size = new System.Drawing.Size(73, 23);
-            this.AptNotxt.TabIndex = 29;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(616, 265);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 15);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Street:";
-            // 
-            // Streettxt
-            // 
-            this.Streettxt.Location = new System.Drawing.Point(616, 283);
-            this.Streettxt.Name = "Streettxt";
-            this.Streettxt.Size = new System.Drawing.Size(256, 23);
-            this.Streettxt.TabIndex = 27;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(496, 265);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 15);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "S_A_Number:";
-            // 
-            // SANumbertxt
-            // 
-            this.SANumbertxt.Location = new System.Drawing.Point(496, 283);
-            this.SANumbertxt.Name = "SANumbertxt";
-            this.SANumbertxt.Size = new System.Drawing.Size(78, 23);
-            this.SANumbertxt.TabIndex = 25;
-            // 
-            // Citytxt
-            // 
-            this.Citytxt.Location = new System.Drawing.Point(614, 335);
-            this.Citytxt.Name = "Citytxt";
-            this.Citytxt.Size = new System.Drawing.Size(115, 23);
-            this.Citytxt.TabIndex = 24;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(750, 335);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(72, 23);
-            this.textBox1.TabIndex = 23;
-            // 
-            // ziptitle
-            // 
-            this.ziptitle.AutoSize = true;
-            this.ziptitle.Location = new System.Drawing.Point(746, 317);
-            this.ziptitle.Name = "ziptitle";
-            this.ziptitle.Size = new System.Drawing.Size(27, 15);
-            this.ziptitle.TabIndex = 22;
-            this.ziptitle.Text = "ZIP:";
-            // 
-            // addresstitle
-            // 
-            this.addresstitle.AutoSize = true;
-            this.addresstitle.Location = new System.Drawing.Point(614, 317);
-            this.addresstitle.Name = "addresstitle";
-            this.addresstitle.Size = new System.Drawing.Size(31, 15);
-            this.addresstitle.TabIndex = 21;
-            this.addresstitle.Text = "City:";
-            // 
             // FormCreateBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -564,6 +564,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormCreateBooking";
             this.Text = "Create New Booking";
+            this.Load += new System.EventHandler(this.FormCreateBooking_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -589,7 +590,7 @@
         private Label selecttime;
         private Label sustomerinfotitle;
         private Label selectboattype;
-        private ComboBox comboBox1;
+        private ComboBox boatOptions;
         private TextBox emailtxt;
         private TextBox phonetxt;
         private TextBox lnametxt;

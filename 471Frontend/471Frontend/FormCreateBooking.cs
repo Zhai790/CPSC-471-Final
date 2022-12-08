@@ -38,5 +38,13 @@ namespace _471Frontend
         {
 
         }
+
+        private void FormCreateBooking_Load(object sender, EventArgs e)
+        {
+            string locationQuery = "SELECT Location_NO FROM location";
+            DbBoatBookings.GetBooking(locationQuery, locationoptions, "Location_No");
+            string boatQuery = "SELECT Boat_ID FROM boat";
+            DbBoatBookings.GetBooking(boatQuery, boatOptions, "Boat_ID");
+        }
     }
 }

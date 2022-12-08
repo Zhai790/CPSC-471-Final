@@ -47,12 +47,7 @@ namespace _471Frontend
                 //edit client button
                 AddSailForm.Clear();
                 AddSailForm.BookingID = (int)dataGridViewSailBooking.Rows[e.RowIndex].Cells[0].Value;
-                AddSailForm.Time = (TimeOnly)dataGridViewSailBooking.Rows[e.RowIndex].Cells[1].Value;
-                AddSailForm.Date = (DateOnly)dataGridViewSailBooking.Rows[e.RowIndex].Cells[2].Value;
-                AddSailForm.Location = dataGridViewSailBooking.Rows[e.RowIndex].Cells[3].Value.ToString();
-                AddSailForm.ClientID = (int)dataGridViewSailBooking.Rows[e.RowIndex].Cells[4].Value;
-                AddSailForm.BoatID = (int)dataGridViewSailBooking.Rows[e.RowIndex].Cells[5].Value;             
-                AddClientForm.UpdateInfo();
+                AddSailForm.UpdateInfo();
                 AddSailForm.ShowDialog();
                 return;
             }
@@ -62,7 +57,7 @@ namespace _471Frontend
                 if (MessageBox.Show("Confirm Deletion?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     DbBoatBookings.DeleteBooking((int)dataGridViewSailBooking.Rows[e.RowIndex].Cells[0].Value);
-                    DisplayClient();
+                    DisplaySailingBooking();
                 }
             }
         }
@@ -74,9 +69,6 @@ namespace _471Frontend
 
         private void addsailbtn_Click(object sender, EventArgs e)
         {
-            //FormAddSailingBooking f = new FormAddSailingBooking(this);
-            //f.ShowDialog();
-
             AddSailForm.Clear();
             AddSailForm.SaveInfo();
             AddSailForm.ShowDialog();
