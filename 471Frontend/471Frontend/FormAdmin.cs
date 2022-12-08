@@ -74,7 +74,7 @@ namespace _471Frontend
             {
                 //edit client button
                 AddAmenForm.Clear();
-                AddAmenForm.BookingID = (int)dataGridViewSailBooking.Rows[e.RowIndex].Cells[0].Value;
+                AddAmenForm.AmmenitiesID = (int)dataGridViewMemBooking.Rows[e.RowIndex].Cells[3].Value;
                 AddAmenForm.UpdateInfo();
                 AddAmenForm.ShowDialog();
                 return;
@@ -84,7 +84,7 @@ namespace _471Frontend
                 //delete client button
                 if (MessageBox.Show("Confirm Deletion?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    DbBoatBookings.DeleteMemBooking((int)dataGridViewSailBooking.Rows[e.RowIndex].Cells[0].Value);
+                    DbBoatBookings.DeleteMemBooking((int)dataGridViewMemBooking.Rows[e.RowIndex].Cells[3].Value);
                     DisplayAmenBooking();
                 }
             }
@@ -159,7 +159,7 @@ namespace _471Frontend
 
         private void searchBookings_TextChanged(object sender, EventArgs e)
         {
-            DbBoatBookings.GetBooking("SELECT booking.Booking_ID, booking.Time, booking.Date, booking.Located_At, reserves.Boat_ID, reserves.Client_ID FROM booking INNER JOIN reserves WHERE reserves.Client_ID = " + Int32.Parse(searchBookings.Text) + "", dataGridViewSailBooking);
+            DbBoatBookings.GetBooking("SELECT booking.Booking_ID, booking.Time, booking.Date, booking.Located_At, reserves.Boat_ID, reserves.Client_ID FROM booking INNER JOIN reserves WHERE booking.Booking_ID = " + Int32.Parse(searchBookings.Text) + "", dataGridViewSailBooking);
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
