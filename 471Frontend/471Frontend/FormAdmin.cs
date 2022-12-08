@@ -6,13 +6,16 @@ namespace _471Frontend
     {
         FormAddClient AddClientForm;
         FormAddSailingBooking AddSailForm;
+        FormAddAmmenitiesBooking AddAmenForm; //add funct
         public FormAdmin()
         {
             InitializeComponent();
             AddClientForm = new FormAddClient(this);
             AddSailForm = new FormAddSailingBooking(this);
+            AddAmenForm = new FormAddAmmenitiesBooking(this);
             dataGridViewClient.AutoGenerateColumns = false;
             dataGridViewSailBooking.AutoGenerateColumns = false;
+            dataGridViewMemBooking.AutoGenerateColumns = false;
         }
 
         public void DisplayClient()
@@ -21,13 +24,16 @@ namespace _471Frontend
         }
         public void DisplaySailingBooking() 
         {
-            DbBoatBookings.GetBooking("SELECT booking.Booking_ID, booking.Time, booking.Date, booking.Located_At, reserves.Boat_ID, reserves.Client_ID FROM booking, reserves", dataGridViewSailBooking);
+            DbBoatBookings.GetBooking("SELECT booking.Booking_ID, booking.Time, booking.Date, booking.Located_At, reserves.Boat_ID, reserves.Client_ID FROM booking INNER JOIN reserves ON booking.Booking_ID = reserves.Booking_ID", dataGridViewSailBooking);
+        }
+        public void DisplayAmenBooking()
+        {
+            DbBoatBookings.GetAmen("SELECT amenities.Amenities_ID, amenities.Location_No, books.Booking_ID, books.Client_ID FROM amenities INNER JOIN books ON amenities.Amenities_ID = books.Amenities_ID", dataGridViewMemBooking);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //FormAddClient form = new FormAddClient(); 
-            //form.ShowDialog();
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -64,7 +70,24 @@ namespace _471Frontend
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.ColumnIndex == 4)
+            {
+                //edit client button
+                AddAmenForm.Clear();
+                AddAmenForm.BookingID = (int)dataGridViewSailBooking.Rows[e.RowIndex].Cells[0].Value;
+                AddAmenForm.UpdateInfo();
+                AddAmenForm.ShowDialog();
+                return;
+            }
+            if (e.ColumnIndex == 5)
+            {
+                //delete client button
+                if (MessageBox.Show("Confirm Deletion?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    DbBoatBookings.DeleteMemBooking((int)dataGridViewSailBooking.Rows[e.RowIndex].Cells[0].Value);
+                    DisplayAmenBooking();
+                }
+            }
         }
 
         private void addsailbtn_Click(object sender, EventArgs e)
@@ -76,14 +99,18 @@ namespace _471Frontend
 
         private void addammenitiesbtn_Click(object sender, EventArgs e)
         {
-            FormAddAmmenitiesBooking fo = new FormAddAmmenitiesBooking();
-            fo.ShowDialog();
+            //FormAddAmmenitiesBooking fo = new FormAddAmmenitiesBooking();
+            //fo.ShowDialog();
+            AddAmenForm.Clear();
+            AddAmenForm.SaveInfo();
+            AddAmenForm.ShowDialog();  
         }
 
         private void FormAdmin_Load(object sender, EventArgs e)
         {
             DisplayClient();
             DisplaySailingBooking();
+            DisplayAmenBooking();
         }
 
         private void addClient_Click(object sender, EventArgs e)
@@ -132,7 +159,16 @@ namespace _471Frontend
 
         private void searchBookings_TextChanged(object sender, EventArgs e)
         {
-            DbBoatBookings.GetBooking("SELECT booking.Booking_ID, booking.Time, booking.Date, booking.Located_At, reserves.Boat_ID, reserves.Client_ID FROM booking, reserves WHERE reserves.Client_ID LIKE " + searchBookings.Text + "", dataGridViewSailBooking);
+            DbBoatBookings.GetBooking("SELECT booking.Booking_ID, booking.Time, booking.Date, booking.Located_At, reserves.Boat_ID, reserves.Client_ID FROM booking INNER JOIN reserves WHERE reserves.Client_ID = " + Int32.Parse(searchBookings.Text) + "", dataGridViewSailBooking);
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void searchAmen_TextChanged(object sender, EventArgs e)
+        {
+            DbBoatBookings.GetAmen("SELECT amenities.Amenities_ID, amenities.Location_No, books.Booking_ID, books.Client_ID FROM amenities INNER JOIN books ON amenities.Amenities_ID = books.Amenities_ID WHERE books.Client_ID = " + Int32.Parse(searchAmen.Text) + "", dataGridViewMemBooking);
         }
     }
 }

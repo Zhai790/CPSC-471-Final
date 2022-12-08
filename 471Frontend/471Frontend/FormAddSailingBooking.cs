@@ -107,7 +107,8 @@ namespace _471Frontend
             if (submitbtnsail.Text == "Submit")
             {
                 InternalClientBooking cb = new InternalClientBooking(TimeOnly.Parse(sailstarttime.Text), sailtimepicker.Value.Date, saillocationtxt.Text.Trim(), Convert.ToInt32(sailclientIDtxt.Text.Trim()), Convert.ToInt32(sailboatIDtxt.Text.Trim()));
-                DbBoatBookings.AddBooking(cb, cb.bookingIDCounter);
+                BookingID = DbBoatBookings.getID("Booking_ID", "booking")+1;
+                DbBoatBookings.AddBooking(cb, BookingID);
                 Clear();
             }
             if (submitbtnsail.Text == "Update")

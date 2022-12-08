@@ -11,7 +11,7 @@ public class InternalClientBooking
     public int ClientID { get; set; }
     public int BoatID { get; set; }
 
-    public int bookingIDCounter = 2;    //find another solution
+    public int bookingID { get; set; }    
 
     public InternalClientBooking(TimeOnly time, DateTime date, string location, int clientID, int boatID)
 	{
